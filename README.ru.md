@@ -1,4 +1,4 @@
-# nuckty-ext-command-validate-vnu
+# @nuckty/ext-command-validate-vnu
 
 > **Проверка собранного HTML через W3C Nu Html Checker — команда `validate`.**
 
@@ -35,22 +35,22 @@ nuckty validate [target]
 
 ## Как подключить
 
-Пример продолжает быстрый старт со стандартным обработчиком `nuckty-ext-block-root`. Добавьте новое расширение в `ext` глобального `config/config-nuckty.ts`, сохранив остальные записи. Если обработчик документа собственный, оставьте его вместо `nuckty-ext-block-root`.
+Пример продолжает быстрый старт со стандартным обработчиком `@nuckty/ext-block-root`. Добавьте новое расширение в `ext` глобального `config/config-nuckty.ts`, сохранив остальные записи. Если обработчик документа собственный, оставьте его вместо `@nuckty/ext-block-root`.
 
 ```ts
-import { defineNucktyConfig } from 'nuckty';
+import { defineNucktyConfig } from '@nuckty/core';
 
 export default defineNucktyConfig({
     targets: { main: { configDir: 'config/', outDir: 'site/' } },
-    ext: ['nuckty-ext-block-root', 'nuckty-ext-command-validate-vnu'],
+    ext: ['@nuckty/ext-block-root', '@nuckty/ext-command-validate-vnu'],
 });
 ```
 
 Затем:
 
 ```bash
-npx nuckty build
-npx nuckty validate
+npx @nuckty/core build
+npx @nuckty/core validate
 ```
 
 ## Контракт

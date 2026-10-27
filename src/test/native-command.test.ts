@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { createServer } from 'node:net';
 import { spawnSync } from 'node:child_process';
-import { NucktyEnv, type CommandArgs } from 'nuckty';
+import { NucktyEnv, type CommandArgs } from '@nuckty/core';
 import { register } from '../index.js';
 
 function command() {

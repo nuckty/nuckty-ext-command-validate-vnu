@@ -1,4 +1,4 @@
-# nuckty-ext-command-validate-vnu
+# @nuckty/ext-command-validate-vnu
 
 > **Validate built HTML with the W3C Nu Html Checker — the `validate` command.**
 
@@ -34,22 +34,22 @@ The core does not depend on vnu or a JVM.
 
 ## How to load
 
-This example extends the quickstart with the standard `nuckty-ext-block-root` document handler. Add the new extension to `ext` in the global `config/config-nuckty.ts`, retaining the other entries. If you use a custom document handler, keep its registration instead of `nuckty-ext-block-root`.
+This example extends the quickstart with the standard `@nuckty/ext-block-root` document handler. Add the new extension to `ext` in the global `config/config-nuckty.ts`, retaining the other entries. If you use a custom document handler, keep its registration instead of `@nuckty/ext-block-root`.
 
 ```ts
-import { defineNucktyConfig } from 'nuckty';
+import { defineNucktyConfig } from '@nuckty/core';
 
 export default defineNucktyConfig({
     targets: { main: { configDir: 'config/', outDir: 'site/' } },
-    ext: ['nuckty-ext-block-root', 'nuckty-ext-command-validate-vnu'],
+    ext: ['@nuckty/ext-block-root', '@nuckty/ext-command-validate-vnu'],
 });
 ```
 
 Then:
 
 ```bash
-npx nuckty build
-npx nuckty validate
+npx @nuckty/core build
+npx @nuckty/core validate
 ```
 
 ## Contract

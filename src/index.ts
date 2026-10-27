@@ -4,7 +4,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { createServer } from 'node:net';
-import type { NucktyEnv, CommandArgs } from 'nuckty';
+import type { NucktyEnv, CommandArgs } from '@nuckty/core';
 
 export interface ValidationError {
     message: string;
@@ -299,7 +299,7 @@ async function validate(args: CommandArgs): Promise<number> {
     let outDir: string;
     let targetName: string;
     try {
-        const { resolveTarget } = await import('nuckty');
+        const { resolveTarget } = await import('@nuckty/core');
         const target = resolveTarget(args.config, args.positional[0]);
         targetName = target.name;
         outDir = path.join(args.cwd, target.outDir);
@@ -387,4 +387,3 @@ export async function runAll<T>(tasks: Array<() => Promise<T>>, limit: number): 
 function sleep(ms: number): Promise<void> {
     return new Promise((r) => setTimeout(r, ms));
 }
-

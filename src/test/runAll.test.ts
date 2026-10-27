@@ -102,7 +102,7 @@ import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import * as path from 'node:path';
 import { findHtmlFiles } from '../index.js';
-import type { NucktyConfig } from 'nuckty';
+import type { NucktyConfig } from '@nuckty/core';
 
 test('findHtmlFiles: collects nested html files, skips non-html', async () => {
     const dir = await mkdtemp(path.join(tmpdir(), 'nuckty-vnu-target-'));
@@ -122,7 +122,7 @@ test('findHtmlFiles: collects nested html files, skips non-html', async () => {
 });
 
 test('CMD-14 pin: resolveTarget honors the explicit target outDir and rejects unknown names', async () => {
-    const { resolveTarget } = await import('nuckty');
+    const { resolveTarget } = await import('@nuckty/core');
     const config: NucktyConfig = {
         targets: {
             a: { configDir: 'config-a/', outDir: 'dist/a/', lang: 'en', host: 'a.example' },
